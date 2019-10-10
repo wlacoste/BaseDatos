@@ -1,15 +1,13 @@
-CREATE DATABASE  IF NOT EXISTS `Base` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `Base`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
--- Host: localhost    Database: mydb
+-- Host: localhost    Database: base
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version	8.0.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+ SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +21,7 @@ USE `Base`;
 
 DROP TABLE IF EXISTS `automovil`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `automovil` (
   `Chasis` varchar(45) NOT NULL,
   `FechaInicio` datetime DEFAULT NULL,
@@ -52,7 +50,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `automovil_estacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `automovil_estacion` (
   `Automovil_ID` varchar(45) NOT NULL,
   `Estacion_Id` int(11) NOT NULL,
@@ -80,7 +78,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `concesionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `concesionario` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
@@ -106,7 +104,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `estacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `estacion` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `OrdenEstacion` int(11) DEFAULT NULL,
@@ -134,7 +132,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `insumo_estacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `insumo_estacion` (
   `CantidadConsumida` int(11) DEFAULT NULL,
   `UnidadConsumida` int(11) DEFAULT NULL,
@@ -161,7 +159,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `insumos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `insumos` (
   `Id` int(11) NOT NULL,
   `Descripcion` varchar(45) DEFAULT NULL,
@@ -189,7 +187,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `lineamontaje`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `lineamontaje` (
   `Id` int(11) NOT NULL,
   `Codigo` varchar(45) DEFAULT NULL,
@@ -216,7 +214,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `modelo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `modelo` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
@@ -242,7 +240,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `pedido` (
   `Id` int(11) NOT NULL,
   `FechaDeVenta` datetime DEFAULT NULL,
@@ -270,7 +268,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pedido_detalle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `pedido_detalle` (
   `modelo_Id` int(11) NOT NULL,
   `Pedido_Id` int(11) NOT NULL,
@@ -296,7 +294,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `proveedor` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
@@ -323,7 +321,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `proveedor_insumos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `proveedor_insumos` (
   `Precio` int(11) DEFAULT NULL,
   `Proveedor_Id` int(11) NOT NULL,
@@ -349,7 +347,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tareadeterminada`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tareadeterminada` (
   `Id` int(11) NOT NULL,
   `Tarea` varchar(45) DEFAULT NULL,
@@ -373,7 +371,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `unidad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `unidad` (
   `Id` int(11) NOT NULL,
   `Descripcion` varchar(45) DEFAULT NULL,
@@ -394,11 +392,7 @@ INSERT INTO `unidad` VALUES (1,'Metros',_binary '','2019-09-11 17:04:04'),(2,'L
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'mydb'
---
-
---
--- Dumping routines for database 'mydb'
+-- Dumping routines for database 'base'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `AltaAutomovil` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -531,6 +525,50 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AltaDeUnidades`()
 BEGIN
 insert into unidad (Id, Descripcion, Eliminado) values (1, 'Metros',0), (2, "Litros",0), (3, 'Sin medida',0);
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `AltaModelo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AltaModelo`(idLineaMontaje int, nombreModelo varchar(45), out numero int)
+BEGIN
+
+
+
+DECLARE idModelo int DEFAULT 0;
+DECLARE Encontrado INT DEFAULT 0;
+DECLARE NombreRep INT DEFAULT 0;
+
+SELECT MAX(Id) FROM modelo
+into 
+idModelo;
+set idModelo = idModelo+1;
+
+select count(Id) from lineamontaje where lineamontaje.Id = idLineaMontaje
+into Encontrado;
+
+select count(Nombre) from modelo where modelo.Nombre = nombreModelo
+into NombreRep;
+
+if Encontrado = 1 AND NombreRep = 0 then
+insert into modelo
+values(idModelo,nombreModelo,0,null);
+
+END IF;
+    
+select idModelo;
 
 END ;;
 DELIMITER ;
@@ -1083,4 +1121,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-10 11:41:02
+-- Dump completed on 2019-10-10 14:05:30
